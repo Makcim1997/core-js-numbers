@@ -103,7 +103,7 @@ describe('core-js-numbers', () => {
     }
   );
 
-  it.optional('isPrime should return true if specified number is prime', () => {
+  it.optional('isPrime  ', () => {
     assert.equal(tasks.isPrime(2), true, 'number 2 is prime');
     assert.equal(tasks.isPrime(3), true, 'number 3 is prime');
     assert.equal(tasks.isPrime(4), false, '4 is not a prime number');
