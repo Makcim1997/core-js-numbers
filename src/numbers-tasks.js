@@ -128,8 +128,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  const str = String(value);
-  return str.length > 1 ? +str[str.length - 1] : value;
+  return value % 10;
 }
 
 /**
@@ -257,7 +256,15 @@ function getCube(num) {
  *   10 => 55
  */
 function getFibonacciNumber(index) {
-  return index;
+  if (index < 1) return 0;
+  let a = 1;
+  let b = 1;
+
+  for (let i = 3; i <= index; i += 1) {
+    const c = a + b;
+    [a, b] = [b, c];
+  }
+  return b;
 }
 
 /**
@@ -339,7 +346,7 @@ function getSine(num) {
  * 2, 2    => '10'
  */
 function numberToStringInBase(number, base) {
-  return number <= 255 ? Math.abs(number).toString(base) : 0;
+  return number.toString(base);
 }
 
 /**
@@ -398,7 +405,7 @@ function toPrecision(number, precision) {
  * Number(-5)    => -5
  */
 function getNumberValue(number) {
-  return number;
+  return number.valueOf();
 }
 
 /**
